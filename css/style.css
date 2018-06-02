@@ -1,0 +1,34 @@
+.mod-tab{
+  margin-top: 30px;
+}
+.mod-tab .header::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.mod-tab .header .tab{
+  float: left;
+  border-top: 1px solid #111111;
+  border-left: 1px solid #111111;
+  background-color: #157859;
+  padding: 6px 22px;
+}
+.mod-tab .header .tab.active{
+  background: #fff;
+}
+.mod-tab .header .tab:last-child{
+  border-right: 1px solid #111111;
+}
+.mod-tab .content{
+  background-color: #eee;
+  width: 214px;
+  height: 160px;
+  border: 1px solid #111111;
+}
+.mod-tab .content .panel{
+  padding: 30px;
+  display: none;
+}
+.mod-tab .content .panel.active{
+  display: block;
+}

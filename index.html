@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <title>js-tab-switch</title>
+</head>
+<body>
+  <div class="mod-tab">
+    <div class="header">
+      <div class="tab active">1</div>
+      <div class="tab">2</div>
+      <div class="tab">3</div>
+      <div class="tab">4</div>
+    </div>
+    <div class="content">
+      <div class="panel active">点击索引，改变内容1</div>
+      <div class="panel">点击索引，改变内容2</div>
+      <div class="panel">点击索引，改变内容3</div>
+      <div class="panel">点击索引，改变内容4</div>
+    </div>
+  </div>
+
+  <div class="mod-tab">
+    <div class="header">
+      <div class="tab active">1</div>
+      <div class="tab">2</div>
+      <div class="tab">3</div>
+      <div class="tab">4</div>
+    </div>
+    <div class="content">
+      <div class="panel active">点击索引，改变内容1</div>
+      <div class="panel">点击索引，改变内容2</div>
+      <div class="panel">点击索引，改变内容3</div>
+      <div class="panel">点击索引，改变内容4</div>
+    </div>
+  </div>
+  <script type="text/javascript">
+  document.querySelectorAll('.mod-tab .tab').forEach(function(node){
+    node.addEventListener('click', function(){
+      var index
+      this.parentElement.querySelectorAll('.tab').forEach(function(tab, idx){
+        tab.classList.remove('active')
+        if(node === tab){
+          index = idx
+        }
+      })
+      this.classList.add('active')
+      this.parentElement.nextElementSibling.querySelectorAll('.panel').forEach(function(panel){
+        panel.classList.remove('active')
+      })
+      this.parentElement.nextElementSibling.querySelectorAll('.panel')[index].classList.add('active')
+    })
+  })
+  </script>
+</body>
+</html>
